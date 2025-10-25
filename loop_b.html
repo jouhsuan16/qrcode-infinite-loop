@@ -11,21 +11,33 @@
             margin-top: 50px; 
             color: #00ff00; /* 霓虹綠 */
             background-color: #0a0a23; /* 深藍/黑背景 */
-            /* 背景：霓虹網格 */
-            background-image: linear-gradient(0deg, transparent 90%, #00ff00 90%), 
-                              linear-gradient(90deg, transparent 90%, #00ff00 90%);
-            background-size: 50px 50px;
+            /* 背景：白色綠色網格，網格線更粗、間距更大 */
+            background-image: 
+                linear-gradient(0deg, transparent 95%, rgba(0,255,0,0.5) 95%), 
+                linear-gradient(90deg, transparent 95%, rgba(0,255,0,0.5) 95%);
+            background-size: 100px 100px; /* 網格間距加大 */
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 40px);
         }
-        h1 { margin-bottom: 30px; text-shadow: 0 0 5px #00ff00; }
+        h1 { margin-bottom: 30px; text-shadow: 0 0 10px #00ff00; } /* 增加陰影讓字更亮 */
         .qrcode-container {
             display: inline-block;
             background-color: white;
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* 霓虹光暈 */
+            max-width: 500px; /* 限制 QR Code 容器的最大寬度 */
         }
-        img { max-width: 90%; height: auto; display: block; }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            max-height: 500px; /* 限制圖片的最大高度 */
+        }
     </style>
 </head>
 <body>
