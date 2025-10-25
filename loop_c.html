@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Loop - Not Yet</title>
+    <style>
+        body { 
+            text-align: center; 
+            font-family: sans-serif; 
+            margin-top: 50px; 
+            background-color: #f0f8ff; /* 淺色背景 */
+            color: #333;
+            padding: 20px;
+        }
+        /* 背景：有個小人在跑步 (使用 CSS 動畫模擬) */
+        .runner {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: orange; /* 跑者顏色 */
+            border-radius: 50%;
+            animation: run-across 10s linear infinite;
+        }
+        @keyframes run-across {
+            0% { left: 0%; transform: rotate(0deg); }
+            50% { left: 100%; transform: rotate(180deg); }
+            50.1% { left: 100%; transform: rotate(0deg); } /* 快速轉向 */
+            100% { left: 0%; }
+        }
+        h1 { margin-bottom: 30px; }
+        .qrcode-container {
+            display: inline-block;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10; /* 確保 QR Code 在跑者之上 */
+        }
+        img { max-width: 90%; height: auto; display: block; }
+    </style>
+</head>
+<body>
+    <h1>NOT YET!</h1>
+    <div class="qrcode-container">
+        <img src="qrcode_a.png" alt="QR Code A">
+    </div>
+    <div class="runner"></div>
+</body>
+</html>
