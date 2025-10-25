@@ -12,6 +12,11 @@
             background-color: #f0f8ff; /* 淺色背景 */
             color: #333;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 40px);
         }
         /* 背景：有個小人在跑步 (使用 CSS 動畫模擬) */
         .runner {
@@ -25,10 +30,11 @@
             animation: run-across 10s linear infinite;
         }
         @keyframes run-across {
-            0% { left: 0%; transform: rotate(0deg); }
-            50% { left: 100%; transform: rotate(180deg); }
-            50.1% { left: 100%; transform: rotate(0deg); } /* 快速轉向 */
-            100% { left: 0%; }
+            0% { left: 0%; transform: translateX(0) rotate(0deg); }
+            49% { left: calc(100% - 50px); transform: translateX(0) rotate(0deg); } /* 跑者到右邊前 */
+            50% { left: calc(100% - 50px); transform: translateX(0) scaleX(-1); } /* 翻轉 */
+            99% { left: 0%; transform: translateX(0) scaleX(-1); } /* 跑者回左邊前 */
+            100% { left: 0%; transform: translateX(0) scaleX(1); } /* 翻轉回來 */
         }
         h1 { margin-bottom: 30px; }
         .qrcode-container {
@@ -39,8 +45,14 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 10; /* 確保 QR Code 在跑者之上 */
+            max-width: 500px; /* 限制 QR Code 容器的最大寬度 */
         }
-        img { max-width: 90%; height: auto; display: block; }
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            max-height: 500px; /* 限制圖片的最大高度 */
+        }
     </style>
 </head>
 <body>
