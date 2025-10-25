@@ -3,16 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Loop - B</title>
+    <title>QR Loop - Maybe</title>
     <style>
-        body { text-align: center; font-family: sans-serif; margin-top: 50px; background-color: #f0f0f0; }
-        h1 { color: #0000cc; }
-        img { max-width: 90%; height: auto; border: 5px solid #0000cc; }
+        body { 
+            text-align: center; 
+            font-family: sans-serif; 
+            margin-top: 50px; 
+            color: #00ff00; /* 霓虹綠 */
+            background-color: #0a0a23; /* 深藍/黑背景 */
+            /* 背景：霓虹網格 */
+            background-image: linear-gradient(0deg, transparent 90%, #00ff00 90%), 
+                              linear-gradient(90deg, transparent 90%, #00ff00 90%);
+            background-size: 50px 50px;
+            padding: 20px;
+        }
+        h1 { margin-bottom: 30px; text-shadow: 0 0 5px #00ff00; }
+        .qrcode-container {
+            display: inline-block;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); /* 霓虹光暈 */
+        }
+        img { max-width: 90%; height: auto; display: block; }
     </style>
 </head>
 <body>
-    <h1>再掃描一次！(Code A)</h1>
-    <img src="qrcode_a.png" alt="QR Code A">
-    <p>這代碼會將您帶回代碼 B。</p>
+    <h1>MAYBE SCAN THIS ONE?</h1>
+    <div class="qrcode-container">
+        <img src="qrcode_c.png" alt="QR Code C">
+    </div>
 </body>
 </html>
