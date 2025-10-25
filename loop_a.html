@@ -3,16 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Loop - A</title>
+    <title>QR Loop - Start</title>
     <style>
-        body { text-align: center; font-family: sans-serif; margin-top: 50px; background-color: #f0f0f0; }
-        h1 { color: #cc0000; }
-        img { max-width: 90%; height: auto; border: 5px solid #cc0000; }
+        body { 
+            text-align: center; 
+            font-family: sans-serif; 
+            margin-top: 50px; 
+            /* 背景：很多不一樣顏色的小星星 */
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient-stars 15s ease infinite;
+            color: white;
+            padding: 20px;
+        }
+        @keyframes gradient-stars {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        h1 { margin-bottom: 30px; }
+        .qrcode-container {
+            display: inline-block;
+            background-color: white; /* 讓 QR Code 在背景上能清楚顯示 */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        img { max-width: 90%; height: auto; display: block; }
     </style>
 </head>
 <body>
-    <h1>恭喜！請掃描下一個代碼 (Code B)</h1>
-    <img src="qrcode_b.png" alt="QR Code B">
-    <p>這代碼會將您帶回代碼 A。</p>
+    <h1>SCAN ME!</h1>
+    <div class="qrcode-container">
+        <img src="qrcode_b.png" alt="QR Code B">
+    </div>
 </body>
 </html>
