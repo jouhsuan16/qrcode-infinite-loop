@@ -15,6 +15,11 @@
             animation: gradient-stars 15s ease infinite;
             color: white;
             padding: 20px;
+            display: flex; /* 使用 flexbox 幫助垂直置中 */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 40px); /* 減去 padding */
         }
         @keyframes gradient-stars {
             0% { background-position: 0% 50%; }
@@ -28,8 +33,14 @@
             padding: 10px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            max-width: 500px; /* 限制 QR Code 容器的最大寬度 */
         }
-        img { max-width: 90%; height: auto; display: block; }
+        img { 
+            max-width: 100%; /* 圖片最大為容器寬度 */
+            height: auto; 
+            display: block; 
+            max-height: 500px; /* 限制圖片的最大高度 */
+        }
     </style>
 </head>
 <body>
